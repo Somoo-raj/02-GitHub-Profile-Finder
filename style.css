@@ -8,7 +8,9 @@ input {
   padding: 10px;
   font-size: 16px;
   width: 200px;
+  outline: none;
 }
+
 button {
   padding: 10px 15px;
   font-size: 16px;
