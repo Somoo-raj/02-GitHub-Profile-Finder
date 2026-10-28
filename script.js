@@ -2,13 +2,23 @@ const userName = document.getElementById("username");
 const searchBtn = document.getElementById("search-btn");
 const profile = document.getElementById("profile");
 
-searchBtn.addEventListener("click", () => {
+// add a handler function
+function handler() {
   const query = userName.value.trim();
   if (query === "") {
     profile.textContent = "Type a user name!";
     return; // Stop execution if empty
   }
   getUser(query);
+}
+
+searchBtn.addEventListener("click", handler);
+
+// add a Enter key listener support
+userName.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    handler();
+  }
 });
 
 async function getUser(userId) {
